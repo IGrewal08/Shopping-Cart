@@ -1,0 +1,23 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: dodgerblue;
+    font-size: 30px;
+    padding: 1rem;
+    color: white;
+    position: sticky;
+}
+
+.pageButtons {
+    display: flex;
+    gap: 1rem;
+}
+
+.pageButton {
+    padding: 1rem;
+    min-width: 5rem;
+    background-color: aliceblue;
+    border: none;
+    border-radius: 8px;
+}
