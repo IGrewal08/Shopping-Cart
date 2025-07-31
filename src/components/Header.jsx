@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styles from "/src/styles/Header.module.css";
 
 export default function Header() {
@@ -5,8 +6,8 @@ export default function Header() {
         <header>
             <div className="logo">MyCart</div>
             <div className={styles.pageButtons}>
-                <button className={styles.pageButton}>Wishlist</button>
-                <button className={styles.pageButton}>Cart</button>
+                <NavLink to="wishlist" className={styles.pageButton}>Wishlist</NavLink>
+                <NavLink to="cart" className={styles.pageButton}>Cart</NavLink>
             </div>
         </header>
     );

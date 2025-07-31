@@ -1,23 +1,27 @@
 header {
+    position: sticky;
+    top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: dodgerblue;
+    background-color: blue;
     font-size: 30px;
-    padding: 1rem;
+    padding: 1.5rem 3rem;
     color: white;
-    position: sticky;
+    
 }
 
 .pageButtons {
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
 }
 
 .pageButton {
-    padding: 1rem;
-    min-width: 5rem;
-    background-color: aliceblue;
-    border: none;
-    border-radius: 8px;
+    text-decoration: none;
+    color: white;
+    font-size: 26px;
+}
+
+.pageButton:hover {
+    text-decoration-line: underline;
 }

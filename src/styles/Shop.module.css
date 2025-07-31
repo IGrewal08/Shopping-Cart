@@ -3,17 +3,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(rgb(21, 0, 255), rgb(181, 255, 250));
+    background-color: aliceblue;
 }
 
-.promotionHeader {
-    color: yellow;
-    font-size: 50px;
-}
-
-.deals {
+.shopItems {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
     padding: 3rem;
 }

@@ -1,9 +1,10 @@
 :root {
     min-width: 100vw;
-
 }
 
 html,
 body {
+    height: 100%;
     margin: 0;
+    padding: 0;
 }
