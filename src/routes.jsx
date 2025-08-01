@@ -12,9 +12,8 @@ const routes = [
     element: <App />,
     children: [
       { index: true, element: <Home /> },
-      { path: "shop", element: <Shop /> , children: [
-        { path: ":id", element: <Product /> }
-      ]},
+      { path: "shop", element: <Shop />},
+      { path: "shop/:productId", element: <Product />},
       { path: "wishlist", element: <Wishlist /> },
       { path: "cart", element: <Cart /> },
     ],

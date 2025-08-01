@@ -1,27 +1,32 @@
 header {
-    position: sticky;
-    top: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: blue;
-    font-size: 30px;
-    padding: 1.5rem 3rem;
-    color: white;
-    
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #5f9ea0;
+  font-size: 35px;
+  padding: 2rem 3rem;
+  color: white;
+  box-shadow: 0 5px 10px #808080bf;
+}
+
+.logo {
+  color: white;
+  text-decoration: none;
 }
 
 .pageButtons {
-    display: flex;
-    gap: 2rem;
+  display: flex;
+  gap: 2rem;
 }
 
 .pageButton {
-    text-decoration: none;
-    color: white;
-    font-size: 26px;
+  text-decoration: none;
+  color: white;
+  font-size: 26px;
 }
 
 .pageButton:hover {
-    text-decoration-line: underline;
+  text-decoration-line: underline;
 }

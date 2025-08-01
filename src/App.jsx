@@ -3,21 +3,31 @@ import { useState, useEffect } from "react";
 import Header from "/src/components/Header.jsx";
 
 export default function App() {
-    const [data, setData] = useState([]);
-    const [cart, setCart] = useState([]);
-    const [wishlist, setWishlist] = useState([]);
+  const [data, setData] = useState([]);
+  const [cart, setCart] = useState([]);
+  const [wishlist, setWishlist] = useState([]);
 
-    function addToCart() {
+  /* In product menu */
+  function addToCart(productId, newQuantity) {
+    let inCart = false;
+    const productData = data.filter((product) => product.id == productId)[0];
+    const cartProduct = { ...productData, quantity: newQuantity };
 
-    }
+    const newCart = cart.map((item) => {
+      if (item.id == productId) {
+        inCart = true;
+        item.quantity = item.quantity + newQuantity;
+      }
+      return item;
+    });
 
-    function removeFromCart() {
+    (inCart) ? setCart(newCart) : setCart([...cart, cartProduct]);
+  }
 
-    }
+  /* In cart */
+  function removeFromCart() {}
 
-    function editCart() {
-        
-    }
+  function editCart() {}
 
   useEffect(() => {
     const fetchData = async () => {
@@ -32,10 +42,11 @@ export default function App() {
     fetchData();
   }, []);
 
-    return (
-        <>
-            <Header />
-            <Outlet context={{ products:data }}/>
-        </>
-    );
+  console.log(cart);
+  return (
+    <>
+      <Header />
+      <Outlet context={{ products: data, addToCart }} />
+    </>
+  );
 }

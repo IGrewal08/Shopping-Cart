@@ -3,11 +3,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(rgb(21, 0, 255), rgb(181, 255, 250));
 }
 
 .promotionHeader {
-    color: yellow;
+    color: rgb(214, 214, 0);
     font-size: 50px;
 }
 
