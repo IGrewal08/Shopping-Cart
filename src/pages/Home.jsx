@@ -7,30 +7,34 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <div className={styles.promotionHeader}>
-        Shop the best deals!
-        <Link to="/shop">Shop Now</Link>
+        <div>Get The Best Deals!</div>
       </div>
-      <div className={styles.deals}>
-        {products.slice(0, 6).map((item) => (
-          <PreviewCard
-            key={item.id}
-            title={item.title}
-            desc={item.description}
-            image={item.image}
-          />
-        ))}
-      </div>
+      {products.length === 0 ? (
+        <div>Loading...</div>
+      ) : (
+        <div className={styles.deals}>
+          {products.slice(0, 6).map((item) => (
+            <PreviewCard
+              key={item.id}
+              desc={item.description}
+              image={item.image}
+            />
+          ))}
+        </div>
+      )}
+      <Link to="/shop" className={styles.shopLink}>
+        Shop Now
+      </Link>
     </div>
   );
 }
 
-function PreviewCard({ title, desc, image }) {
+function PreviewCard({ desc, image }) {
   return (
     <div className={styles.sampleCard}>
       <div className={styles.imageHolder}>
         <img src={image} alt={desc}></img>
       </div>
-      <h2>{title}</h2>
     </div>
   );
 }

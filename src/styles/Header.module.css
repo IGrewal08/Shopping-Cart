@@ -25,6 +25,8 @@ header {
   text-decoration: none;
   color: white;
   font-size: 26px;
+  display: flex;
+  gap: 0.3rem;
 }
 
 .pageButton:hover {

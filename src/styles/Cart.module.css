@@ -1,0 +1,60 @@
+.cartContainer {
+  display: flex;
+  min-height: 100vh;
+}
+
+.cartCard {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr;
+    margin: 3rem 12rem;
+    gap: 1rem;
+}
+
+.imageHolder {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+}
+
+.imageHolder img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.deleteButton {
+  background-color: #5f9ea0;
+  border: 1px solid white;
+  color: white;
+  font-weight: 700;
+  border-radius: 15px;
+  padding: 0.5rem 1.2rem;
+  margin: 3rem;
+}
+
+.checkout {
+    font-size: 26px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.checkout button {
+  background-color: #af6a67;
+  border: 1px solid white;
+  color: white;
+  font-weight: 700;
+  border-radius: 15px;
+  padding: 1rem 1.2rem;
+}
+
+.noItems {
+  display: flex;
+  padding-left: 35rem;
+  padding-top: 10rem;
+  color: #af6a67;
+  font-size: 50px;
+}

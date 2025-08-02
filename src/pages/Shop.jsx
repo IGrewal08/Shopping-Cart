@@ -3,11 +3,7 @@ import styles from "/src/styles/Shop.module.css";
 
 export default function Shop() {
   const { products } = useOutletContext();
-
-  function handleLinkClick() {
-    return <Link to="/shop">CLICK THIS</Link>
-  }
-
+  window.scrollTo(0, 0);
   return (
     <div className={styles.container}>
       <div className={styles.shopItems}>
@@ -15,7 +11,6 @@ export default function Shop() {
           <Link to={`${item.id}`} className={styles.products} key={item.id}>
           <ProductCard
             props={item}
-            onClick={() => handleLinkClick(item)}
           />
         </Link>
         ))}
@@ -24,9 +19,9 @@ export default function Shop() {
   );
 }
 
-function ProductCard({ props, onClick}) {
+function ProductCard({ props }) {
   return (
-    <div className={styles.sampleCard} onClick={onClick}>
+    <div className={styles.sampleCard} >
       <div className={styles.imageHolder}>
         <img src={props.image} alt={props.desc}></img>
       </div>

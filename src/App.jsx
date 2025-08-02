@@ -1,13 +1,13 @@
 import { Outlet } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Header from "/src/components/Header.jsx";
+import Footer from "/src/components/Footer";
 
 export default function App() {
   const [data, setData] = useState([]);
   const [cart, setCart] = useState([]);
-  const [wishlist, setWishlist] = useState([]);
+  const [totalPrice, setTotalPrice] = useState(0);
 
-  /* In product menu */
   function addToCart(productId, newQuantity) {
     let inCart = false;
     const productData = data.filter((product) => product.id == productId)[0];
@@ -21,13 +21,35 @@ export default function App() {
       return item;
     });
 
-    (inCart) ? setCart(newCart) : setCart([...cart, cartProduct]);
+    inCart ? setCart(newCart) : setCart([...cart, cartProduct]);
+    calTotal();
   }
 
-  /* In cart */
-  function removeFromCart() {}
+  function removeFromCart(productId) {
+    const newCart = cart.filter((item) => item.id != productId);
+    setCart(newCart);
+    calTotal();
+  }
 
-  function editCart() {}
+  function editCart(updatedQuantity, productId) {
+    const newCart = cart.map((item) => {
+      if (item.id == productId) {
+        item.quantity = updatedQuantity;
+      }
+      return item;
+    });
+    setCart(newCart);
+    calTotal();
+  }
+
+  function calTotal() {
+    let total = 0;
+    cart.map((item) => {
+      total += (item.price * item.quantity);
+    });
+
+    setTotalPrice(Math.floor(total * 100) / 100);
+  }
 
   useEffect(() => {
     const fetchData = async () => {
@@ -42,11 +64,17 @@ export default function App() {
     fetchData();
   }, []);
 
-  console.log(cart);
   return (
     <>
       <Header />
-      <Outlet context={{ products: data, addToCart }} />
+      <Outlet
+        context={{
+          products: data,
+          addToCart,
+          cartFunc: { cart, totalPrice, removeFromCart, editCart, calTotal },
+        }}
+      />
+      <Footer />
     </>
   );
 }
