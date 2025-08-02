@@ -4,22 +4,22 @@
 }
 
 .cartCard {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr 1fr;
-    margin: 3rem 12rem;
-    gap: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr;
+  margin: 3rem 12rem;
+  gap: 1rem;
 }
 
 .imageHolder {
-    width: 150px;
-    height: 150px;
-    overflow: hidden;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
 }
 
 .imageHolder img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .deleteButton {
@@ -28,21 +28,24 @@
   color: white;
   font-weight: 700;
   border-radius: 15px;
+  max-height: 4rem;
+  min-height: 4rem;
   padding: 0.5rem 1.2rem;
   margin: 3rem;
 }
 
 .checkout {
-    font-size: 26px;
-    display: flex;
-    flex-direction: column;
-    padding-top: 1rem;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
+  font-size: 26px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
 .checkout button {
+  margin: 1.5rem;
   background-color: #af6a67;
   border: 1px solid white;
   color: white;

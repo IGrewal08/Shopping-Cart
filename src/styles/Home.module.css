@@ -6,7 +6,7 @@
   align-items: center;
   gap: 0rem;
   padding: 1rem;
-  background: linear-gradient(rgb(233, 245, 255), white)
+  background: linear-gradient(rgb(233, 245, 255), white);
 }
 
 .promotionHeader {
@@ -15,7 +15,6 @@
   display: flex;
   align-items: center;
 }
-
 
 .shopLink {
   font-size: 30px;
@@ -47,13 +46,17 @@
   text-wrap: wrap;
   max-width: 20rem;
   padding: 3em 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+.sampleCard:hover {
+  transform: scale(1.1);
 }
 
 .imageHolder {
   width: 150px;
   height: 150px;
   overflow: hidden;
-  
 }
 
 .imageHolder img {

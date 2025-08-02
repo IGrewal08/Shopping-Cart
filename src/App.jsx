@@ -45,7 +45,7 @@ export default function App() {
   function calTotal() {
     let total = 0;
     cart.map((item) => {
-      total += (item.price * item.quantity);
+      total += item.price * item.quantity;
     });
 
     setTotalPrice(Math.floor(total * 100) / 100);

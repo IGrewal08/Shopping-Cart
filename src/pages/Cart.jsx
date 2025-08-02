@@ -4,7 +4,7 @@ import styles from "/src/styles/Cart.module.css";
 
 export default function Cart() {
   const { cartFunc } = useOutletContext();
-  const { cart, totalPrice, removeFromCart, editCart, calTotal} = cartFunc;
+  const { cart, totalPrice, removeFromCart, editCart, calTotal } = cartFunc;
 
   calTotal();
 
@@ -27,7 +27,6 @@ export default function Cart() {
             <button>Checkout</button>
           </div>
         </div>
-        
       )}
     </div>
   );
@@ -48,7 +47,12 @@ function CartItem({ props, editCart, removeFromCart }) {
         quantity={props.quantity}
         itemId={props.id}
       />
-      <button className={styles.deleteButton} onClick={() => removeFromCart(props.id)}>Delete</button>
+      <button
+        className={styles.deleteButton}
+        onClick={() => removeFromCart(props.id)}
+      >
+        Delete
+      </button>
     </div>
   );
 }

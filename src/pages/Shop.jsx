@@ -9,10 +9,8 @@ export default function Shop() {
       <div className={styles.shopItems}>
         {products.map((item) => (
           <Link to={`${item.id}`} className={styles.products} key={item.id}>
-          <ProductCard
-            props={item}
-          />
-        </Link>
+            <ProductCard props={item} />
+          </Link>
         ))}
       </div>
     </div>
@@ -21,7 +19,7 @@ export default function Shop() {
 
 function ProductCard({ props }) {
   return (
-    <div className={styles.sampleCard} >
+    <div className={styles.sampleCard}>
       <div className={styles.imageHolder}>
         <img src={props.image} alt={props.desc}></img>
       </div>

@@ -5,3 +5,14 @@ footer {
   color: white;
   text-align: center;
 }
+
+.svgContainer {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  padding: 1rem;
+}
+
+.svgContainer > svg {
+  max-width: 3rem;
+}
